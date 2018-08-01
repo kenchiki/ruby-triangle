@@ -2,9 +2,9 @@ require 'spec_helper'
 
 RSpec.describe Triangle do
   describe '#shape_name' do
-    # 同値分割法
-    describe 'equivalence partition method' do
-      it 'is exception, when side is zero' do
+    # 同値分割
+    describe 'equivalence partition' do
+      it 'is exception, when sides are 0, 0, 0' do
         expect{Triangle.new(0, 0, 0).shape_name}.to raise_error ArgumentError
       end
 
@@ -25,8 +25,8 @@ RSpec.describe Triangle do
       end
     end
 
-    # 境界値分析法
-    describe 'boundary value analysis method' do
+    # 境界値分析
+    describe 'boundary value analysis' do
       # 不等辺三角形の境界値分析
       it 'is not scalene triangle, when sides are (4 - 3), 5, 6' do
         expect(Triangle.new((4 - 3), 5, 6).shape_name).not_to eq '不等辺三角形ですね！'
